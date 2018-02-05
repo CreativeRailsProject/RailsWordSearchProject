@@ -2,7 +2,7 @@
 
 # Contributors
 
-Collin Valleroy, Jamie Kunzelman, Luis Hernandez-Cruz
+Collin Valleroy, Jamie Kunzelman, Luis Hernandez Cruz
 
 # Project Summary
 
