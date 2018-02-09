@@ -26,7 +26,7 @@ class SearchesController < ApplicationController
 	
 	/create the blank 20x20 array/
 	wordSearchArray = Array.new(20) {Array.new(20, "-")}
-	wordSearchKey = Array.new(wordSearchArray)
+	wordSearchKey = Array.new(20) {Array.new(20, "-")}
 	/fill the array with random capital letters/
 	wordSearchArray.each_index do |row|
 		wordSearchArray[row].each_index do |col|
@@ -57,6 +57,17 @@ class SearchesController < ApplicationController
 	end
 	@search.key = wordSearchKey
 	@search.word_search = wordSearchArray
+	
+	/output the wordSearchArray filled with the user's words/
+	puts "Word Search"
+	wordSearchArray.each do |arg|
+		puts arg.each{|line| line}.join(" ")
+	end
+
+	puts "Word Search KEY"
+	wordSearchKey.each do |arg|
+		puts arg.each{|line| line}.join(" ")
+	end
 
 	# try to save word search to db.
 	if @search.save

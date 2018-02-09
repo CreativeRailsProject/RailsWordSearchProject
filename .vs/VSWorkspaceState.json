@@ -3,8 +3,8 @@
     "",
     "\\WordSearch",
     "\\WordSearch\\app",
-    "\\WordSearch\\app\\controllers"
+    "\\WordSearch\\db\\migrate"
   ],
-  "SelectedNode": "\\WordSearch\\app\\controllers\\WordSearchGen.rb",
+  "SelectedNode": "\\WordSearch\\db",
   "PreviewInSolutionExplorer": false
 }
