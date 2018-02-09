@@ -1,7 +1,44 @@
-<!-- Show inputted words. -->
 <p>
-  <%= @search.words %>
+
+<!-- Set font face and size for table contents and caption -->
+	<STYLE TYPE="text/css">
+	<!--
+	CAPTION{font-family: Verdana; font-size: 18pt;}
+	TD{font-family: Verdana; font-size: 10pt;}
+	--->
+	</STYLE>
+
+
+<!-- Create table to display search words in word bank -->
+  	<table class="fixed" style="width:20%" bordercollapse="1" border="1" bordercolor = "orange" bgcolor = "white" 
+  		cellpadding="5" cellspacing = "0">
+  		<col width="20px">
+  		<col width="20px">
+
+  	
+  		<caption>Word Bank<caption>
+  		<tr>
+  			<td><%= @search.words[0] %></td>
+  			<td><%= @search.words[5] %></td>
+  		</tr>
+  		<tr>
+  			<td><%= @search.words[1] %></td>
+  			<td><%= @search.words[6] %></td>
+  		</tr>
+  		<tr>
+  			<td><%= @search.words[2] %></td>
+  			<td><%= @search.words[7] %></td>
+  		</tr>
+  		<tr>
+  			<td><%= @search.words[3] %></td>
+  			<td><%= @search.words[8] %></td>
+  		</tr>
+  		<tr>
+  			<td><%= @search.words[4] %></td>
+  			<td><%= @search.words[9] %></td>
+  		</tr>
+
+
 </p>
 
-<!-- TODO: Display search words in word bank. -->
 <!-- TODO: Display word search -->
