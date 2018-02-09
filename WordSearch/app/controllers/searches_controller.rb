@@ -21,8 +21,42 @@ class SearchesController < ApplicationController
 	# Place words into search object
 	@search.words = wordsArr
 
-	# TODO: Generate search based on wordsArr
-	#       and place into @search.word_search. (@search.word_search = 20x20arr)
+	# Generate search based on wordsArr
+	# and place into @search.word_search. (@search.word_search = 20x20arr)
+	
+	/create the blank 20x20 array/
+	wordSearchArray = Array.new(20) {Array.new(20, "-")}
+	wordSearchKey = Array.new(wordSearchArray)
+	/fill the array with random capital letters/
+	wordSearchArray.each_index do |row|
+		wordSearchArray[row].each_index do |col|
+			wordSearchArray[row][col] = (65 + rand(26)).chr
+		end
+	end
+
+	/keep track of which lines we have already put a word on/
+	linesUsed = Array.new()
+
+	wordsArr.each do |word|
+		word = word.upcase
+		vertPos = rand(20)
+
+		/make sure we haven't put a word on this line yet/
+		while linesUsed.include?(vertPos)
+			vertPos = rand(20)
+		end
+		/choose a starting point in the row/
+		horizRand = rand(21 - word.length)
+
+		/place characters into the wordSearchArray/
+		for place in (0..(word.length-1))
+			horizPos = horizRand + place
+			wordSearchArray[vertPos][horizPos] = word[place]
+			wordSearchKey[vertPos][horizPos] = word[place]
+		end
+	end
+	/@search.word_search_key = wordSearchKey/
+	@search.word_search = wordSearchArray
 
 	# try to save word search to db.
 	if @search.save
