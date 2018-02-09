@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def new
-    # Create search object
+	# Create search object
 	@search = Search.new
   end
 
