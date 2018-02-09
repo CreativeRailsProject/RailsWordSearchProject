@@ -24,7 +24,6 @@ class SearchesController < ApplicationController
 	# TODO: Generate search based on wordsArr
 	#       and place into @search.word_search. (@search.word_search = 20x20arr)
 
-	test
 	# try to save word search to db.
 	if @search.save
 		# redirect to show page
