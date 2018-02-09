@@ -14,6 +14,7 @@ class SearchesController < ApplicationController
 	@search = Search.new
 
 	# Get words from input and place in array
+	words = params[:search][:words][0]
 	wordsArr = words.split(/\s*,\s*/)
 
 	# Place words into search object
