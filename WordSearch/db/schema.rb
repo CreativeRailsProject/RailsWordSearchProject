@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20180209072432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "word_search"
+    t.string "key"
   end
 
 end
