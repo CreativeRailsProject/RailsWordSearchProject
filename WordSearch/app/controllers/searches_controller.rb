@@ -55,7 +55,7 @@ class SearchesController < ApplicationController
 			wordSearchKey[vertPos][horizPos] = word[place]
 		end
 	end
-	/@search.word_search_key = wordSearchKey/
+	@search.key = wordSearchKey
 	@search.word_search = wordSearchArray
 
 	# try to save word search to db.
