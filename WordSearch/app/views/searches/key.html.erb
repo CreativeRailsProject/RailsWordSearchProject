@@ -3,18 +3,32 @@
 <!-- Set font face and size for table contents and caption -->
 	<STYLE TYPE="text/css">
 	<!--
-	CAPTION{font-family: Verdana; font-size: 18pt;}
+	CAPTION{font-family: Verdana; font-size: 14pt;}
 	TD{font-family: Verdana; font-size: 10pt;}
 	--->
 	</STYLE>
 
   <td>
-    <%= link_to 'BACK', searches_path(@search) %>
+    <%= link_to 'Search Index', searches_path %>
   </td>
-  
+  <td>
+    <%= link_to 'Back to Word Search', search_path(@search) %>
+  </td>
+
+  <!-- Display word search -->
+  <table class="fixed" align="center" style="width:20%" cellpadding="5" cellspacing="0">
+    <% @search.key.each do |array| %>
+    <tr>
+      <% array.length.times do |i| %>
+      <td align="center">
+        <%= array[i] %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
   
 <!-- Create table to display search words in word bank -->
-  	<table class="fixed" style="width:20%" bordercollapse="1" border="1" bordercolor = "black" bgcolor = "white" 
+  	<table class="fixed" align="center" style="width:20%" bordercollapse="1" border="1" bordercolor = "black" bgcolor = "white" 
   		cellpadding="5" cellspacing = "0">
   		<col width="20px">
   		<col width="20px">
