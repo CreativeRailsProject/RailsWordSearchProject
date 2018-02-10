@@ -44,7 +44,10 @@ class SearchesController < ApplicationController
 		end
 		# Choose a starting point in the row
 		horizRand = rand(21 - word.length)
-
+		
+		# Randomly decide if the word should be flipped when put into the word search
++		flipRand = rand(2)
+		
 		# Place characters into the wordSearchArray
 		if flipRand == 0
 			for place in (0..(word.length-1))
