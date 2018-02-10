@@ -7,22 +7,26 @@
 	TD{font-family: Verdana; font-size: 10pt;}
 	--->
 	</STYLE>
+
   <td>
     <%= link_to 'Search Index', searches_path %>
   </td>
   <td>
-    <%= link_to 'Answer Key', key_search_path(@search) %>
+    <%= link_to 'Back to Word Search', search_path(@search) %>
   </td>
-<!-- Display word search -->
-  <table class="fixed" align="center" style="width:20%" cellpadding="5" cellspacing="0">
-    <% @search.word_search.each do |array| %>
-      <tr>
-        <% array.length.times do |i| %>
-        <td align="center"> <%= array[i] %> </td>
-        <% end %> 
-      </tr>
-    <% end %>
 
+  <!-- Display word search -->
+  <table class="fixed" align="center" style="width:20%" cellpadding="5" cellspacing="0">
+    <% @search.key.each do |array| %>
+    <tr>
+      <% array.length.times do |i| %>
+      <td align="center">
+        <%= array[i] %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  
 <!-- Create table to display search words in word bank -->
   	<table class="fixed" align="center" style="width:20%" bordercollapse="1" border="1" bordercolor = "black" bgcolor = "white" 
   		cellpadding="5" cellspacing = "0">
@@ -52,4 +56,7 @@
   			<td><%= @search.words[4] %></td>
   			<td><%= @search.words[9] %></td>
   		</tr>
+
+
+
 </p>
