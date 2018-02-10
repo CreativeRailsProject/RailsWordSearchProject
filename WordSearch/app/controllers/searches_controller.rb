@@ -14,17 +14,15 @@ class SearchesController < ApplicationController
 	@search = Search.new
 
 	# Get words from input and place in array
-	words = params[:search][:words][0]
-	wordsArr = words.split(/\s*,\s*/)
+	wordsArr = params[:search][:words]
 
 	# Place words into search object
 	@search.words = wordsArr
 
 	# Generate search based on wordsArr
-	# and place into @search.word_search. (@search.word_search = 20x20arr)
 	
 	# Create the blank 20x20 array
-	wordSearchArray = Array.new(20) {Array.new(20)}
+	wordSearchArray = Array.new(20) {Array.new(20, "-")}
 	wordSearchKey = Array.new(20) {Array.new(20, "-")}
 	# Fill the array with random capital letters
 	wordSearchArray.each_index do |row|
@@ -44,11 +42,9 @@ class SearchesController < ApplicationController
 		while linesUsed.include?(vertPos)
 			vertPos = rand(20)
 		end
-		linesUsed.push(vertPos)
 		# Choose a starting point in the row
 		horizRand = rand(21 - word.length)
-		# Randomly decide if the word should be flipped when put into the word search
-		flipRand = rand(2)
+
 		# Place characters into the wordSearchArray
 		if flipRand == 0
 			for place in (0..(word.length-1))
@@ -88,20 +84,20 @@ class SearchesController < ApplicationController
   end
 
   def show
-	# Get the search object from database based on the id
-	@search = Search.find(params[:id])
+    # Get the search object from database based on the id
+    @search = Search.find(params[:id])
   end
 
   def key
-	# Get the key object from database based on the id
-	@search = Search.find(params[:id])
-  end
-
-  
-  def destroy
+    # Get the key object from database based on the id
     @search = Search.find(params[:id])
-    @search.destroy
-	redirect_to searches_path
-end
+    end
+
+
+    def destroy
+      @search = Search.find(params[:id])
+      @search.destroy
+    redirect_to searches_path
+  end
 
 end

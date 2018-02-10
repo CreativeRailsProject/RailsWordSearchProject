@@ -1,5 +1,9 @@
+<div class="center">
+<h1 class="title"> Word Search Generator</h1>
+
 <!-- Form to take in words. -->
 <%= form_for(@search) do |f| %>
+
 <%= f.label :words %>
 <%= f.text_field :words, multiple: true%>
 <%= f.submit "Submit words" %>
@@ -7,3 +11,28 @@
 <td>
   <%= link_to 'Search Index', searches_path %>
 </td>
+
+  <div class="form-group"> 
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+  </div>
+  <div class="form-group"> 
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+  </div>
+  <div class="form-group"> 
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+  </div>
+  <div class="form-group"> 
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+  </div>
+  <div class="form-group"> 
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+    <%= f.text_field :words, multiple: true, :class => 'word-input'%>
+  </div>
+    <%= f.submit "Generate", :class => 'submit-button' %>
+    <% end %>
+  
+</div>
