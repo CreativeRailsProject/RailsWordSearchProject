@@ -14,14 +14,12 @@ class SearchesController < ApplicationController
 	@search = Search.new
 
 	# Get words from input and place in array
-	words = params[:search][:words][0]
-	wordsArr = words.split(/\s*,\s*/)
+	wordsArr = params[:search][:words]
 
 	# Place words into search object
 	@search.words = wordsArr
 
 	# Generate search based on wordsArr
-	# and place into @search.word_search. (@search.word_search = 20x20arr)
 	
 	# Create the blank 20x20 array
 	wordSearchArray = Array.new(20) {Array.new(20, "-")}

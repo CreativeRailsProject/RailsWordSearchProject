@@ -1,3 +1,53 @@
-// Place all the styles related to the Searches controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.center {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height: 100%;
+    border: 3px solid black;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap
+}
+
+.word-input {
+    font-family: Verdana;
+    flex: 1 1 auto;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border-style: solid;
+    border-color: darkgray;
+    border-left-color: black;
+}
+
+.submit-button {
+    font-family: Verdana;
+    font-size: 14pt;
+    align-self: center;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 40px;
+    width: 50%;
+    border-style: solid;
+    border-color: black;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 60px;
+    font-family: Verdana;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+form {
+    padding: 10px;
+}
