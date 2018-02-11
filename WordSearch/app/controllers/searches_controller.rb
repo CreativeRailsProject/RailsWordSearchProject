@@ -16,6 +16,17 @@ class SearchesController < ApplicationController
 	# Get words from input and place in array
 	wordsArr = params[:search][:words]
 	wordsArr.map!(&:upcase)
+
+	# Check if any of the inputted words are >10 characters
+	wordsArr.each do |word|
+		if word.length > 10
+			flash[:notice] = "Words must be less than 11 characters"
+			redirect_to '/new'
+			return
+		else
+		end
+	end
+
 	# Place words into search object
 	@search.words = wordsArr
 
