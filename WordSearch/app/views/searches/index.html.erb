@@ -1,28 +1,43 @@
-<h1>Word Searches Created so Far!</h1>
-<%= link_to 'New Word Search', new_search_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
+<!-- Set font face and size for table contents and caption -->
+<STYLE TYPE="text/css">
+  <!--
+  H1{font-family: Verdana; font-size: 24pt;}
+	TD{font-family: Verdana; font-size: 12pt;}
+  TR{font-family: Verdana; font-size: 12pt;}
+	--->
+</STYLE>
+<head>
+  <h1 align="center">Word Searches Created So Far!</h1>
+</head>
 
-  <% @searches.each do |search| %>
-  <tr>
-    <td>
-      <%= search.id %>
-    </td>
-    <td>
-      <%= link_to 'Show', search_path(search) %>
-    </td>
-    <td>
-      <%= link_to 'Answer Key', key_search_path(search) %>
-    </td>
-    <td>
-      <%= link_to 'Destroy', search_path(search),
-      method: :delete,
-      data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<body align="center">
+  <%= link_to 'New Word Search', new_search_path %>
+  <table class="fixed" align="center" style="width:20%" bordercollapse="1" border="1" bordercolor = "black" bgcolor = "white"
+  		  cellpadding="5" cellspacing = "0">
+    <tr>
+      <th>Number</th>
+      <th>Show</th>
+      <th>Answers</th>
+      <th>Delete</th>
+    </tr>
+
+    <% @searches.each do |search| %>
+    <tr>
+      <td align="center">
+        <%= search.id %>
+      </td>
+      <td>
+        <%= link_to 'Show', search_path(search) %>
+      </td>
+      <td>
+        <%= link_to 'Answer Key', key_search_path(search) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', search_path(search),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</body>
