@@ -9,11 +9,11 @@
 	</STYLE>
 
   <div>
-    <%= link_to 'Search Index', searches_path %>
-  </div>
+    <%= link_to 'Search Index', searches_path , :class => 'link'%>
+    </div>
   <div>
-    <%= link_to 'Answer Key', key_search_path(@search) %>
-  </div>
+    <%= link_to 'Answer Key', key_search_path(@search) , :class => 'link'%>
+    </div>
 <!-- Display word search -->
   <table class="fixed" align="center" style="width:20%" cellpadding="5" cellspacing="0">
     <% @search.word_search.each do |array| %>
