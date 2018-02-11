@@ -1,3 +1,28 @@
-<!-- TODO: Display all words searches. -->
-<h1>Searches#index</h1>
-<p>Find me in app/views/searches/index.html.erb</p>
+<h1>Word Searches Created so Far!</h1>
+<%= link_to 'New Word Search', new_search_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @searches.each do |search| %>
+  <tr>
+    <td>
+      <%= search.id %>
+    </td>
+    <td>
+      <%= link_to 'Show', search_path(search) %>
+    </td>
+    <td>
+      <%= link_to 'Answer Key', key_search_path(search) %>
+    </td>
+    <td>
+      <%= link_to 'Destroy', search_path(search),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %>
+</table>

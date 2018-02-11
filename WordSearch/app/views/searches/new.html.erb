@@ -3,7 +3,6 @@
 
 <!-- Form to take in words. -->
 <%= form_for(@search) do |f| %>
-
   <div class="form-group"> 
     <%= f.text_field :words, multiple: true, :class => 'word-input'%>
     <%= f.text_field :words, multiple: true, :class => 'word-input'%>
@@ -25,6 +24,6 @@
     <%= f.text_field :words, multiple: true, :class => 'word-input'%>
   </div>
     <%= f.submit "Generate", :class => 'submit-button' %>
-    <% end %>
-  
+  <% end %>
+  <%= link_to 'Search Index', searches_path %>
 </div>
