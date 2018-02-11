@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
 
 	# Get words from input and place in array
 	wordsArr = params[:search][:words]
-
+	wordsArr.map!(&:upcase)
 	# Place words into search object
 	@search.words = wordsArr
 
@@ -42,6 +42,7 @@ class SearchesController < ApplicationController
 		while linesUsed.include?(vertPos)
 			vertPos = rand(20)
 		end
+		linesUsed.push(vertPos)
 		# Choose a starting point in the row
 		horizRand = rand(21 - word.length)
 		
